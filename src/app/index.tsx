@@ -1,17 +1,21 @@
 import { router } from 'expo-router'
 import React, { type ReactElement } from 'react'
-import { Pressable, View } from 'react-native'
+import { View } from 'react-native'
 
+import { Button } from '../components/atoms/Button'
 import { Text } from '../components/atoms/Text'
 
 export default function Page (): ReactElement {
   return (
-    <View style={{ flexDirection: 'row' }}>
-      <Text>This is Home page,</Text>
+    <View style={{ gap: 16 }}>
+      <Text>This is Home page</Text>
 
-      <Pressable onPress={() => { router.push('/about') }}>
-        <Text> go to About page.</Text>
-      </Pressable>
+      <Button
+        text="Go to About page"
+        onPress={() => {
+          router.push('/about')
+        }}
+      />
     </View>
   )
 }
