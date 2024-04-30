@@ -1,20 +1,22 @@
 import { Slot } from 'expo-router'
 import React, { type ReactElement } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { SafeAreaView } from 'react-native'
+
+import { useColor } from '../styles/globals'
 
 export default function Page (): ReactElement {
+  const color = useColor()
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: color('white', 'black'),
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}
+    >
       <Slot/>
-    </View>
+    </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})

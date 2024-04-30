@@ -1,6 +1,8 @@
 import { router } from 'expo-router'
 import React, { type ReactElement } from 'react'
-import { Pressable, Text, View } from 'react-native'
+import { Pressable, View } from 'react-native'
+
+import { Text } from '../../components/atoms/Text'
 
 export default function Page (): ReactElement {
   return (
